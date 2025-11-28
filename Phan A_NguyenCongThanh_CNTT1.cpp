@@ -176,7 +176,7 @@ public:
 	void TimKiem(){
 		int a;
 		vector<int> LuuTru;
-		cout << "Chon phuong an sap xep sinh vien: "<< "\n" <<
+		cout << "Chon phuong an tim kiem sinh vien: "<< "\n" <<
 				"1.Tim kiem theo ma sinh vien" << "\n" <<
 				"2.Tim kiem theo ho ten" << "\n" <<
 				"3.Tim kiem theo tuoi"  << "\n" <<
