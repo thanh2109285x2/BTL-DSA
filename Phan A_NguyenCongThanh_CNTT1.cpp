@@ -3,6 +3,7 @@
 #include <chrono>
 #include <ctime>
 #include <algorithm> 
+#include <unordered_map>
 
 using namespace std;
 
@@ -247,6 +248,16 @@ public:
 		    }
 		}
 	}
+
+	void ThongKeSoLuongSinhVien(){
+		unordered_map<double, int> Mapthongke;
+		for(int i = 0; i < n ; i++){
+			Mapthongke[DanhSach[i].getDiem()]++;
+		}
+		for(auto& tk : Mapthongke){
+			cout << "so sinh vien co diem " << tk.first << " la: " << tk.second << endl;
+		}
+	}
 };
 
 class App {
@@ -261,7 +272,8 @@ public:
 				<<	"2. Xuat danh sach sinh vien\n"
 				<<	"3. Sap xep danh sach\n"
 				<<	"4. Tim sinh vien co diem hoac nam sinh lon nhat \n"
-				<<	"5. Tim sinh vien theo lua chon"
+				<<	"5. Tim sinh vien theo lua chon\n"
+				<<  "6. Thong ke theo diem\n"
 				<<	"0. Thoat\n"
 					<< "============================\n";
             cout << "Nhap lua chon: ";
@@ -283,6 +295,8 @@ public:
                 case 5:
                 	ds.TimKiem();
                 	break;
+                case 6:
+                	ds.ThongKeSoLuongSinhVien();
                 case 0:
                     cout << "Thoat chuong trinh...\n";
                     break;

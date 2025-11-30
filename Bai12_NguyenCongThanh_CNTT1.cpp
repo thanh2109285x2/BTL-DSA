@@ -66,8 +66,6 @@ public:
 			st.pop();
 			
 			if(u == end) break;
-
-			bool hasChild = false; // kiem tra xem dinh u co con hay khong
 			for(int v = n - 1; v >= 0; v --){ // duyet visited
 				if(a[u][v] != 0 && !visited[v]){ // neu co duong di ti diem dang xet den, va chua di qua thi them vao stack
 					visited[v] = true;
@@ -75,12 +73,10 @@ public:
 					st.push(v);
 				}
 			}
-			if(!hasChild){ // neu khong con con nao thi backtrack
-				visited[u] = false; 
-			}
 		}
 		if(!visited[end]){
 			cout << "khong co duong di"<< endl;
+			fout << "khong co duong di"<< "\n";
 		}
 		else{
 			cout << "Duong di: ";
